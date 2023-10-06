@@ -1,14 +1,6 @@
-const http = require('http');
+const app = require('./app');
 
-const server = http.createServer((req, res) => {
-  if (req.method ==='GET' && req.url === '/') {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end('Hello World!');
-  }
+app.listen(3001, () => {
+    console.log('server on http://localhost:3001')
 }
 )
-
-server.listen(3001, () => {
-    console.log('server on local host 3001')
-})
